@@ -74,7 +74,7 @@ To paginate a response, the following parameters should be provided:
 
 
     Example:
-    curl -H "Authorization: Bearer {access_token}" https://localhost:8000/api/v1/accounts/?page=2&per_page=5
+    curl -H "Authorization: Bearer <access_token>" https://localhost:8000/api/v1/accounts/?page=2&per_page=5
 
 
 ## API Endpoints
@@ -84,7 +84,7 @@ To paginate a response, the following parameters should be provided:
 
 >       GET /api/v1/accounts/?page=1&amp;per_page=5 HTTP/1.1
         Host: localhost:8000
-        Authorization: Bearer 5KMNBDbKIsirEJBrCbp74EhTULVwlg
+        Authorization: Bearer <access_token>
         
         Sample response:
         {
@@ -117,7 +117,7 @@ To paginate a response, the following parameters should be provided:
 
 >       POST /api/v1/payments/ HTTP/1.1
         Host: localhost:8000
-        Authorization: Bearer 5KMNBDbKIsirEJBrCbp74EhTULVwlg
+        Authorization: Bearer <access_token>
         Content-Type: application/json
         {
             "from_account":"1",
@@ -137,7 +137,7 @@ Fetch list of transactions for the user authenticated with access_token
 
 >       GET /api/v1/payments/?page=1&amp;per_page=10 HTTP/1.1
         Host: localhost:8000
-        Authorization: Bearer 5KMNBDbKIsirEJBrCbp74EhTULVwlg
+        Authorization: Bearer <access_token>
         
         Sample response::
           {     
