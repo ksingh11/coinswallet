@@ -15,16 +15,15 @@ Payment wallet prototype application, featuring basic functionality APIs. Projec
  - Create a Python 2.7 virtualenv
         
         virtualenv [-p path/to/python2.7] venv
-    
-    
-- Install dependencies:
-        
-        pip install -r requirements.txt
-
 
 - activate python virtual environment:
   
         source venv/bin/activate
+
+- Install dependencies:
+        
+        pip install -r requirements.txt
+
 
 - Setup Database:
     move to sub-directory `coinswallet/`, then run migrations to create database. Using only `sqlite3` DB for development.
