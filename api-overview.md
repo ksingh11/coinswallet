@@ -140,14 +140,14 @@ Fetch list of transactions for the user authenticated with access_token
         Authorization: Bearer 5KMNBDbKIsirEJBrCbp74EhTULVwlg
         
         Sample response::
-          {
+          {     
+              "success": true,
               "message": "transactions list",
               "meta": {
                 "total_count": 13,
                 "next_page": 2,
                 "previous_page": 1
               },
-              "success": true,
               "transactions": [
                 {
                   "id": 14,
