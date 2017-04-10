@@ -1,0 +1,6 @@
+venv/
+logs/
+*.pyc
+*~
+*.sqlite3
+.idea
