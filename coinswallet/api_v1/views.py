@@ -15,6 +15,13 @@ from wallet_core.views import WalletTransaction, WalletController
 
 
 class AccountsAPI(APIView):
+    """
+    Api endpoint controller: api/v1/accounts/
+
+    GET: list all accounts registered
+    Authorisation type: Bearer token
+    Auth scopes required: 'view'
+    """
     authentication_classes = [OAuth2Authentication]
     permission_classes = [TokenHasScope]
     required_scopes = ['view']
@@ -63,6 +70,15 @@ class AccountsAPI(APIView):
 
 
 class PaymentAPI(APIView):
+    """
+    Api endpoint controller: api/v1/accounts/
+
+    GET: list all transactions for the user
+    POST: Make new transactions
+
+    Authorisation type: Bearer token
+    Auth scopes required: 'view', 'transact'
+    """
     authentication_classes = [OAuth2Authentication]
     permission_classes = [TokenHasScope]
     required_scopes = ['view', 'transact']

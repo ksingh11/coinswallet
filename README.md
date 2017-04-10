@@ -58,10 +58,17 @@ Payment wallet prototype application, featuring basic functionality APIs. Projec
         flake8 <directory|filename>
         e.g. $ flake8 coinswallet/
 
+
+## Project's Django Apps:
+- wallet_core: core wallet logic, interaction with DB
+- api_v1: wrapper over wallet logic, which is responsible for handling api calls, and interaction with wallet's core module'
+
+
 ## Third party Django Packages:
 - [django-rest-framework](https://github.com/encode/django-rest-framework)
 - [django-oauth-toolkit](https://github.com/evonove/django-oauth-toolkit)
 - [flake8](https://github.com/PyCQA/flake8)
+
 
 ## Usage Directions:
 - Setup Project
@@ -88,6 +95,7 @@ Payment wallet prototype application, featuring basic functionality APIs. Projec
         response: {"access_token": <access_token>, "token_type": "Bearer", "expires_in": 6000, "refresh_token": <refresh_token>, "scope": "transact view"}
 
 - Use any rest client with Authorization header, to test APIs. [API Overview](api-overview.md)
+
 
 ## Feedback and Queries:
 - mail at: [kaushal@zostel.com](mailto:kaushal@zostel.com)
