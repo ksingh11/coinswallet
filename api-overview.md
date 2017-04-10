@@ -58,7 +58,7 @@ In production all API access should be over HTTPS. All data is sent and received
         
 ## Pagination
 
-All GET endpoints support pagination. Responses from such endpoints contain `meta` in the response body:
+GET endpoints support pagination. Responses from such endpoints contain `meta` in the response body:
  
 >       "meta": {
           "total_count": 14,
