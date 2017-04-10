@@ -90,4 +90,4 @@ Payment wallet prototype application, featuring basic functionality APIs. Projec
 - Use any rest client with Authorization header, to test APIs. [API Overview](api-overview.md)
 
 ## Feedback and Queries:
-- Shoot mail at: [kaushal@zostel.com](mailto:kaushal@zostel.com)
+- mail at: [kaushal@zostel.com](mailto:kaushal@zostel.com)
