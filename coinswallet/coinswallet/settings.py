@@ -185,7 +185,7 @@ DEFAULT_GET_RESPONSE_PER_PAGE = 10
 
 ##############################################################
 # Django Logger settings,
-# logfile: logs/coins_debug.log
+# logfile: coinswallet_debug.log
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -215,7 +215,7 @@ LOGGING = {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': 'logs/coins_debug.log',
+            'filename': 'coinswallet_debug.log',
         },
     },
     'loggers': {
