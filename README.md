@@ -59,7 +59,7 @@ Payment wallet prototype application, featuring basic functionality APIs. Projec
 
 
 ## Project's Django Apps:
-- wallet_core: core wallet logic, interaction with DB
+- wallet_core: core wallet logic, holding all the logics and interacting with DB
 - api_v1: wrapper over wallet logic, which is responsible for handling api calls, and interaction with wallet's core module'
 
 
