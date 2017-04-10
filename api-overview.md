@@ -11,17 +11,19 @@
 
 ## Current Version
 
-The CoinsWallet API is currently at version 1. Use the following base URI to access version 1 endpoints.
+The CoinsWallet API is currently at version 1.0, use the following base URI to access version 1.0 endpoints.
 
-    https://localhost:8000/api/v1/
+    http://localhost:8000/api/v1/
 
 ## Authentication
 
-The CoinsWallet API follows OAuth 2 for authentication, requires all requests include an AccessToken to authenticate the client. 
-Use `grant_type=password` with `username` and `password`, along with application's `client_id` and `client_secret`.
+The CoinsWallet API follows OAuth 2 for authentication, require requests to include the `access_token` to authenticate the client. 
+Use `grant_type=password` to authenticate with `username` and `password`, along with application's `client_id` and `client_secret`.
     
 > Auth URL: http://localhost:8000/o/token/
+
 > Response contains: `access_token`, `token_type`, `expires_in`, `refresh_token` and `scope` parameters.
+
 > __Scope consists__
     transact: Transaction rights
     view : View rights
@@ -32,21 +34,21 @@ Use `grant_type=password` with `username` and `password`, along with application
     client_id = `6LnALs4wMmYcVPn7Tol6joXpJXSEb9BCEsr3o6Bn`
     client_secret = `uzDYdXGbbYBstWmo06YmNuLG2IxBviUMpT3pFYaMcptPYaMMAnWYSI86Ngx6BWCi5UlVQHcUYjP0HPbDONGycD6fYJN75TAYfDeWptFcYM8zDdpZTaXfwg4s9KXJBKJl`
     
-    $ curl -X POST -d "grant_type=password&username=kaushal&password=Hello12#" -u"6LnALs4wMmYcVPn7Tol6joXpJXSEb9BCEsr3o6Bn:uzDYdXGbbYBstWmo06YmNuLG2IxBviUMpT3pFYaMcptPYaMMAnWYSI86Ngx6BWCi5UlVQHcUYjP0HPbDONGycD6fYJN75TAYfDeWptFcYM8zDdpZTaXfwg4s9KXJBKJl" http://localhost:8000/o/token/
+    $ curl -X POST -d "grant_type=password&username=kaushal&password=secret_pass" -u"6LnALs4wMmYcVPn7Tol6joXpJXSEb9BCEsr3o6Bn:uzDYdXGbbYBstWmo06YmNuLG2IxBviUMpT3pFYaMcptPYaMMAnWYSI86Ngx6BWCi5UlVQHcUYjP0HPbDONGycD6fYJN75TAYfDeWptFcYM8zDdpZTaXfwg4s9KXJBKJl" http://localhost:8000/o/token/
     
-    {"access_token": "liFJnAbK4TD4PFEvnn0UBwTkTlmIaB", "token_type": "Bearer", "expires_in": 60, "refresh_token": "luDicaZKQ91Gr3Voj5V98StAwVxM13", "scope": "transact view"}
+    {"access_token": "<access_token>", "token_type": "Bearer", "expires_in": 60, "refresh_token": "<refresh_token>", "scope": "transact view"}
     
 ## Authorization
 
 The CoinsWallet API allows, and in some cases requires, requests to include an access token to authorize elevated client privileges. Pass the access token via the standard `Authorization` HTTP header as type `Bearer`.
 
-    curl -H "Authorization: Bearer {access_token}" https://localhost:8000/api/v1/:resource
+    curl -H "Authorization: Bearer <access_token>" https://localhost:8000/api/v1/endpoint/
 
 ## Schema
 
-All API access should be over HTTPS. All data is sent and received as `JSON`.
+In production all API access should be over HTTPS. All data is sent and received as `JSON`.
 
-> request body contains a `success` parameter which is `true/false`, and a `detail` parameter.
+> request body contains a `success` parameter which is `true/false`, and a `message` parameter.
  
 >      Sample response: 
        {
@@ -65,8 +67,11 @@ All GET endpoints support pagination. Responses from such endpoints contain `met
         }
 
 To paginate a response, the following parameters should be provided:
+
 - `page` - Page number of the result set.
+
 - `per_page` - Optional. The number of items to return per page. Defaults to 10 and allows up to 100.
+
 
     Example:
     curl -H "Authorization: Bearer {access_token}" https://localhost:8000/api/v1/accounts/?page=2&per_page=5
@@ -74,14 +79,14 @@ To paginate a response, the following parameters should be provided:
 
 ## API Endpoints
 
-###### 1. List of accounts registered
+#### 1. List of accounts registered:
 > GET api/v1/accounts/
 
 >       GET /api/v1/accounts/?page=1&amp;per_page=5 HTTP/1.1
         Host: localhost:8000
         Authorization: Bearer 5KMNBDbKIsirEJBrCbp74EhTULVwlg
         
-        Sample response::
+        Sample response:
         {
           "success": true
           "message": "Account list retrieved",
@@ -107,7 +112,7 @@ To paginate a response, the following parameters should be provided:
         }
 
 
-###### 2. Payment: transact from one account to other
+#### 2. Payment: transfer amount from one account to other:
 > POST api/v1/payments/
 
 >       POST /api/v1/payments/ HTTP/1.1
@@ -126,7 +131,7 @@ To paginate a response, the following parameters should be provided:
             "success": true
         }
         
-###### 3. Payment: get list of transactions
+#### 3. Payment: get list of transactions:
 Fetch list of transactions for the user authenticated with access_token
 > GET api/v1/payments/
 

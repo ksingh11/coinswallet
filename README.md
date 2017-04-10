@@ -2,16 +2,16 @@
 
 Payment wallet prototype application, featuring basic functionality APIs. Project built using [Django framework](https://github.com/django/django) on python.
 
-#### Features
+## Features
 - Registers a client application to make API calls, to get `client_id` and `client_secret`.
 - Register users, who will be wallet owners.
 - Authenticate user, to get access_token.
-- Make API calls, with header Authentication Bearer Token
+- Make API calls, with header `Authorization Bearer token`
 
-#### Quick links
+## Quick links
 - [API Overview](api-overview.md)
 
-#### Setup (To run locally)
+## Setup (To run locally)
  - Create a Python 2.7 virtualenv
         
         virtualenv [-p path/to/python2.7] venv
@@ -41,30 +41,29 @@ Payment wallet prototype application, featuring basic functionality APIs. Projec
         python manage.py runserver
 
 
-#### Setup Quick:
-- Using shell script:
-setup project using shell script, `setup.sh` placed in project root.
+## Quick Setup:
+- Using shell script, `setup.sh` placed in project root.
 
         source setup.sh
 
-#### Running the tests:
-- Run test fixture for both, unit test and functional test:
+## Running the tests:
+- Run test fixture for both, unit and functional test:
 
         python manage.py test
 
 
-#### Code Linting:
-- Code linting is done with `flake8`, using `.flake8` config file
+## Code Linting:
+- Run code linting with `flake8`, using `.flake8` config file.
 
         flake8 <directory|filename>
-        e.g. $ flake8 coinswallet
+        e.g. $ flake8 coinswallet/
 
-#### Third party Django Packages:
+## Third party Django Packages:
 - [django-rest-framework](https://github.com/encode/django-rest-framework)
 - [django-oauth-toolkit](https://github.com/evonove/django-oauth-toolkit)
 - [flake8](https://github.com/PyCQA/flake8)
 
-#### Usage Directions:
+## Usage Directions:
 - Setup Project
 - Load fixtures (optional, but recommended for testing)
 - Create django super user, or use already created with fixtures:
@@ -75,17 +74,20 @@ setup project using shell script, `setup.sh` placed in project root.
 - Start django server
 - Login to django admin
 - create new OAuth Client:
- create with client_type: confidential, Authorization grant type: Resource owner password-based. 
+ create with `client_type: confidential`, `Authorization grant type: Resource owner password-based`. 
  Or use already created application with fixtures.
  
-        fixture's application detail:
+        Application detail in fixture:
         name: MobileApp
         client_id: 6LnALs4wMmYcVPn7Tol6joXpJXSEb9BCEsr3o6Bn
         client_secret: uzDYdXGbbYBstWmo06YmNuLG2IxBviUMpT3pFYaMcptPYaMMAnWYSI86Ngx6BWCi5UlVQHcUYjP0HPbDONGycD6fYJN75TAYfDeWptFcYM8zDdpZTaXfwg4s9KXJBKJl
  
-- Generate access token for user `kaushal`, password: `secret_pass`:
+- Generate access token for username `kaushal`, password: `secret_pass`:
 
         curl -X POST -d "grant_type=password&username=kaushal&password=secret_pass" -u"6LnALs4wMmYcVPn7Tol6joXpJXSEb9BCEsr3o6Bn:uzDYdXGbbYBstWmo06YmNuLG2IxBviUMpT3pFYaMcptPYaMMAnWYSI86Ngx6BWCi5UlVQHcUYjP0HPbDONGycD6fYJN75TAYfDeWptFcYM8zDdpZTaXfwg4s9KXJBKJl" http://localhost:8000/o/token/
         response: {"access_token": <access_token>, "token_type": "Bearer", "expires_in": 6000, "refresh_token": <refresh_token>, "scope": "transact view"}
 
 - Use any rest client with Authorization header, to test APIs. [API Overview](api-overview.md)
+
+## Feedback and Queries:
+- Shoot mail at: [kaushal@zostel.com](mailto:kaushal@zostel.com)
