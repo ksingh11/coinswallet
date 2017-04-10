@@ -42,7 +42,7 @@ Use `grant_type=password` to authenticate with `username` and `password`, along 
 
 The CoinsWallet API allows, and in some cases requires, requests to include an access token to authorize elevated client privileges. Pass the access token via the standard `Authorization` HTTP header as type `Bearer`.
 
-    curl -H "Authorization: Bearer <access_token>" https://localhost:8000/api/v1/endpoint/
+    curl -H "Authorization: Bearer <access_token>" https://localhost:8000/api/v1/<endpoint>/
 
 ## Schema
 
