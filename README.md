@@ -92,6 +92,7 @@ Payment wallet prototype application, featuring basic functionality APIs. Projec
 
         curl -X POST -d "grant_type=password&username=kaushal&password=secret_pass" -u"6LnALs4wMmYcVPn7Tol6joXpJXSEb9BCEsr3o6Bn:uzDYdXGbbYBstWmo06YmNuLG2IxBviUMpT3pFYaMcptPYaMMAnWYSI86Ngx6BWCi5UlVQHcUYjP0HPbDONGycD6fYJN75TAYfDeWptFcYM8zDdpZTaXfwg4s9KXJBKJl" http://localhost:8000/o/token/
 
+
         response: {"access_token": <access_token>, "token_type": "Bearer", "expires_in": 6000, "refresh_token": <refresh_token>, "scope": "transact view"}
 
 - Use any rest client with Authorization header, to test APIs. [API Overview](api-overview.md)
